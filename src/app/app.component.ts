@@ -18,10 +18,12 @@ export class AppComponent implements OnInit {
   title = 'AG Test';
   query: string;
   artists: any;
+  currentArtist: any;
 
   showArtist(item: any) {
     this.query = item.name;
     item.highlight = !item.highlight;
+    this.currentArtist = item;
   }
 
   constructor(private http: HttpClient) {
